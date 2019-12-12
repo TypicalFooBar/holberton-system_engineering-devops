@@ -1,0 +1,2 @@
+#!/bin/bash
+stat --format=%F /tmp/iamafile
