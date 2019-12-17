@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "\"(\xD4o)'"
+echo -e "\"(\u00D4o)'"
