@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $PATH | grep -o : | wc -l | xargs -I{} expr {} + 1
