@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Description
+
+for file in *;
+do
+	echo "$file" | cut -f2 -d'-'
+done
