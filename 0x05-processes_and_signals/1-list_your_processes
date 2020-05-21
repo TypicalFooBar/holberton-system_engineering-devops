@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Description
 
-ps -aux
+ps -auxf
