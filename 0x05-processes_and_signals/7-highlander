@@ -7,5 +7,5 @@ do
 	
 	sleep 2
 
-	trap "I am invincible!!!" SIGTERM
+	trap 'echo "I am invincible!!!"' SIGTERM
 done
