@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script connects
+ssh -i ~/.ssh/holberton ubuntu
