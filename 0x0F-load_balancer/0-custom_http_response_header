@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Installs nginx
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+stringToReplace="^server {"
+rewrite="rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+errorPage="error_page 404 /404.html;"
+addHeader="add_header X-Served-By ${HOSTNAME};"
+newString="server {\n\t${rewrite}\n\t${errorPage}\n\t${addHeader}"
+sudo sed -i "s@${stringToReplace}@${newString}@" /etc/nginx/sites-available/default
+
+sudo service nginx restart
